@@ -256,9 +256,9 @@ LAYOUT STRUCTURE
 
         <form name="test" onsubmit="return false;">
                 <p><b>Название города</b><br>
-                 <input type="text" id="haha" size="40">
+                 <input type="text" id="haha" style="font-size:20px;height:25px;width:296px">
                 </p>
-                <p><input type="submit" value="узнать погоду" onclick="fetch('http://337332-koplenov.tmweb.ru:2281/'+document.getElementById('haha').innerText/*'https://cors-anywhere.herokuapp.com/'+'http://337332-koplenov.tmweb.ru:3657/test'*/).then(function(response) {
+                <p><input type="submit" style="font-size:20px;width:300px" value="узнать погоду" onclick="fetch('http://337332-koplenov.tmweb.ru:2281/'+document.getElementById('haha').value/*'https://cors-anywhere.herokuapp.com/'+'http://337332-koplenov.tmweb.ru:3657/test'*/).then(function(response) {
                         return response.json();
                       }).then(function(data) {
                         console.log(data);
@@ -266,7 +266,7 @@ LAYOUT STRUCTURE
                       }).catch(function() {
                         console.log('Booo');
                       });"></p>
-                <p><label id="label">/шото/</label></p>
+                <p><label id="label" style="font-size:20px;height:25px;width:296px">/шото/</label></p>
                 <br>
         </form>
 

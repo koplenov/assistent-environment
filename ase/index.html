@@ -260,24 +260,48 @@ LAYOUT STRUCTURE
                 <font color=#96b551><p><b>Название города</b><br></font>
                 <input type="text" id="haha" style="font-size:20px;height:25px;width:296px">
                 </p>
-                <p><input type="submit" style="font-size:20px;width:300px" value="узнать погоду" onclick="fetch('http://337332-koplenov.tmweb.ru:2281/GET/'+document.getElementById('haha').value/*'https://cors-anywhere.herokuapp.com/'+'http://337332-koplenov.tmweb.ru:3657/test'*/).then(function(response) {
+                <p><input type="submit" style="font-size:20px;width:300px" value="узнать погоду" onclick="fetch('http://assistent.kinsle.ru:2281/GET/WeatherByCity/'+document.getElementById('haha').value/*'https://cors-anywhere.herokuapp.com/'+'http://337332-koplenov.tmweb.ru:3657/test'*/).then(function(response) {
                         return response.json();
                       }).then(function(data) {
                         console.log(data);
                         switch (data) {
                           case 404.404:
-                                document.getElementById('label').innerText='Город не найден..';
+                                document.getElementById('LabelWatherByCity').innerText='Город не найден..';
                             break;
                           case 503.503:
-                                document.getElementById('label').innerText='Внутренняя ошибка сервера...';
+                                document.getElementById('LabelWatherByCity').innerText='Внутренняя ошибка сервера...';
                             break;
                           default:
-                                document.getElementById('label').innerText='В этом городе ' + data + '°';
+                                document.getElementById('LabelWatherByCity').innerText='В этом городе ' + data + '°';
                         }
                       }).catch(function() {
                         console.log('Booo');
                       });"></p>
-                <p><label id="label" style="font-size:20px;height:25px;width:296px">/шото/</label></p>
+                <p><label id="LabelWatherByCity" style="font-size:20px;height:25px;width:296px">/шото/</label></p>
+                <br>
+        </form>
+
+        <form name="test" onsubmit="return false;">
+                <font color=#96b551><p><b>-"я тваю пагоду по айпи выщислю"</b><br></font>
+                </p>
+                <p><input type="submit" style="font-size:20px;width:300px" value="страшна.." onclick="fetch('http://assistent.kinsle.ru:2281/GET/WeatherByIp/'/*'https://cors-anywhere.herokuapp.com/'+'http://337332-koplenov.tmweb.ru:3657/test'*/).then(function(response) {
+                        return response.json();
+                      }).then(function(data) {
+                        console.log(data);
+                        switch (data) {
+                          case 404.404:
+                                document.getElementById('LabelWatherByIp').innerText='Город не найден..';
+                            break;
+                          case 503.503:
+                                document.getElementById('LabelWatherByIp').innerText='Внутренняя ошибка сервера...';
+                            break;
+                          default:
+                                document.getElementById('LabelWatherByIp').innerText='В этом городе ' + data + '°, но это не точно ¯\\_(ツ)_/¯ ';
+                        }
+                      }).catch(function() {
+                        console.log('Booo');
+                      });"></p>
+                <p><label id="LabelWatherByIp" style="font-size:20px;height:25px;width:296px">/шото/</label></p>
                 <br>
         </form>
 
